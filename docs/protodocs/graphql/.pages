@@ -1,0 +1,10 @@
+title: GraphQL
+nav:
+  - index.md
+  - basic-concepts.md
+  - query-syntax.md
+  - language-libraries.md
+  - python-implementation.md
+  - springboot-implementation.md
+  - nodejs-implementation.md
+  - best-practices.md

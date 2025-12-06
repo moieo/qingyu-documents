@@ -1,0 +1,19 @@
+title: TypeScript
+arrange:
+  - index.md
+  - intro.md
+  - environment.md
+  - syntax.md
+  - basic-types.md
+  - variable.md
+  - function.md
+  - class.md
+  - interface.md
+  - type-inference.md
+  - type-assertion.md
+  - union-types.md
+  - intersection-types.md
+  - generics.md
+  - module.md
+  - config.md
+  - project.md

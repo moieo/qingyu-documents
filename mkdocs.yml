@@ -1,0 +1,52 @@
+site_name: 晴雨文档
+site_url: "https://docs.moieo.net"
+site_author: Moieo
+copyright: Copyright © 2025 Moieo.
+
+plugins:
+  - search
+  - awesome-pages
+  - rss
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+
+theme:
+  name: material
+  language: zh
+  font:
+    text: 'Noto Sans 300 400 500 700 900' # 设置正文字体
+    code: 'Noto Sans Mono' # 设置代码字体，可选
+  features:
+    - content.code.copy
+    - navigation.top
+    - navigation.footer
+    - navigation.tabs
+    - toc.follow
+
+extra_css:
+  # - https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900
+  - stylesheets/extra.css
+extra_javascript:
+  - javascript/extra.js
+  - https://api.moieo.net/loadjs
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true   # 行号 + 锚点
+      linenums: true          # 全局默认行号（如想手动控制可删）
+  - pymdownx.inlinehilite    # 支持行内代码高亮
+  - pymdownx.snippets        # 支持片段插入
+  - pymdownx.superfences:    # 支持嵌套代码块（如 Mermaid）
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition               # 提示块
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

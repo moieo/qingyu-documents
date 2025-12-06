@@ -1,0 +1,47 @@
+/* 网格背景样式 */
+:root {
+  /* 网格颜色和间距配置 */
+  --grid-color: rgba(220, 220, 220, 0.2); /* 网格线颜色，轻微透明 */
+  --grid-size: 30px; /* 网格间距 */
+  --grid-width: 1px; /* 网格线宽度 */
+}
+
+/* 为整个网站指定字体 */
+body {
+  font-family: "Noto Sans SC", "Noto Sans CJK SC", sans-serif !important;
+}
+
+/* 确保强调文本使用粗体 */
+strong, b {
+  font-weight: 700 !important;
+}
+
+/* 为页面添加网格背景 */
+.md-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) var(--grid-width), transparent var(--grid-width)),
+    linear-gradient(to bottom, var(--grid-color) var(--grid-width), transparent var(--grid-width));
+  background-size: var(--grid-size) var(--grid-size);
+  z-index: -1; /* 确保网格在内容下方 */
+  pointer-events: none; /* 允许鼠标事件穿透网格 */
+}
+
+
+/* 深色模式适配 */
+[data-md-color-scheme="slate"] {
+  --grid-color: rgba(80, 80, 80, 0.2); /* 深色模式下的网格颜色 */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.md-content__inner {
+  animation: fadeIn .6s ease-out;
+}
